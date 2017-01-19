@@ -1,12 +1,15 @@
 var lineCounter = 0;
 
 $(document).ready(() => {
+    gv.nextLine();
+    lineCounter++;
     // clicking on text wrapper
     $('#text-wrapper').click(()=> {
         if(lineCounter < chapter.length) {
             gv.nextLine();
             gv.nextName();
             gv.nextBg();
+            gv.nextItem();
             lineCounter++;
         }
     });
@@ -45,6 +48,17 @@ var gv = {
             var url = `url(img/backgrounds/${chapter[lineCounter].backPic}.jpg`;
             $('#container').css('background-image', url);
         }
+    },
+    nextItem: () => {
+        if(!chapter[lineCounter].itemPic){
+            $('#item-pic').css('background-image','');
+            $('#item-pic').css('visibility', 'hidden');
+        }
+        else {
+            var url = `url(img/items/${chapter[lineCounter].itemPic}.png`;
+            $('#item-pic').css('background-image',url);
+            $('#item-pic').css('visibility', 'visible');
+        }
     }
 } //=========== game view end =============
 
@@ -82,31 +96,4 @@ var gv = {
 //         timerList.push(id);
 //     });
 
-// //Sets character name on the left or right
-//     if (chapter[i].textSide == "right") {
-//         charName.setAttribute("class", "name-right");
-//     }
-//     else if (chapter[i].textSide == "left") {
-//         charName.setAttribute("class", "name-left");
-//     }
-//     else if (chapter[i].textSide == "blank") {
-//         charName.setAttribute("class", "blank");
-//     }
-
-//   //Shows background
-//     if(chapter[i].backPic !== ""){
-//         container.setAttribute("class", chapter[i].backPic);
-//     }
-//     else {
-//         container.setAttribute("class", "blank");
-//     }
-//   //Shows item picture 
-//     if(chapter[i].pic !== ""){
-//         smallPic.setAttribute("class", chapter[i].pic);
-//         }
-//     else {
-//         smallPic.setAttribute("class", "blank");
-//     }
-
-//     if(lineCounter < chapter.length - 1){lineCounter++;}
 // } //======== NEXT LINE EVENT END==========

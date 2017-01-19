@@ -11,6 +11,17 @@ var chapter = [
 
     {
         backPic: "classroom",
+        text: "..."
+    },
+
+    {
+        backPic: "classroom", itemPic: "phone",
+        speaker: "phone", nameSide: "left",
+        text: "*buzz* *buzz*"
+    },
+
+    {
+        backPic: "classroom", itemPic: "phone",
         speaker: "Jack", nameSide: "right",
         text: "Hey!"
     },

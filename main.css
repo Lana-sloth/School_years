@@ -35,22 +35,15 @@ body {
     top: -15px;
 }
 
-#small-pic {
+#item-pic {
     border-radius: 3px;
     width: 100px;
     height: 100px;
     position: absolute;
     top: 15px;
-}
-
-.small-pic-left {
+    border: 1px solid #cccccc;
     left: 15px;
-    border: 1px solid #cccccc;
-}
-
-.small-pic-right {
-    right: 15px;
-    border: 1px solid #cccccc;
+    visibility: hidden; 
 }
 
 .name-right {
