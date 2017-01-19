@@ -51,13 +51,12 @@ var gv = {
     },
     nextItem: () => {
         if(!chapter[lineCounter].itemPic){
-            $('#item-pic').css('background-image','');
-            $('#item-pic').css('visibility', 'hidden');
+            $('#item-pic').hide('fast');
         }
         else {
             var url = `url(img/items/${chapter[lineCounter].itemPic}.png`;
             $('#item-pic').css('background-image',url);
-            $('#item-pic').css('visibility', 'visible');
+            $('#item-pic').show('fast');
         }
     }
 } //=========== game view end =============

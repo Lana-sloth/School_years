@@ -43,7 +43,7 @@ body {
     top: 15px;
     border: 1px solid #cccccc;
     left: 15px;
-    visibility: hidden; 
+    display: none; 
 }
 
 .name-right {
