@@ -1,4 +1,5 @@
 // backPic
+// backSpeed
 // itemPic
 // speaker
 // nameSide
@@ -9,7 +10,7 @@ var chapter = [
         text: "..."
     },
 
-    {
+    {   
         backPic: "classroom",
         text: "..."
     },
@@ -38,7 +39,7 @@ var chapter = [
         text: "HEY!"
     },
 
-    {
+    {  
         speaker: "Tim", nameSide: "left",
         text: "Huh?"
     }

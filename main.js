@@ -40,13 +40,15 @@ var gv = {
         }
     }, // next name end
     nextBg: () => {
+        if(!chapter[lineCounter].backSpeed) {chapter[lineCounter].backSpeed = 10}
         if(!chapter[lineCounter].backPic){
-            $('#container').css('background-image','');
-            $('#container').css('background-color', '#000000');
+            $('#background').fadeOut(chapter[lineCounter].backSpeed);
         }
         else{
             var url = `url(img/backgrounds/${chapter[lineCounter].backPic}.jpg`;
-            $('#container').css('background-image', url);
+            $('#background').css('background-image', url);
+            $('#background').fadeIn(chapter[lineCounter].backSpeed);
+
         }
     },
     nextItem: () => {
