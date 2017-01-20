@@ -10,6 +10,7 @@ $(document).ready(() => {
             gv.nextName();
             gv.nextBg();
             gv.nextItem();
+            gv.nextAvatarLeft();
             lineCounter++;
         }
     });
@@ -59,6 +60,17 @@ var gv = {
             var url = `url(img/items/${chapter[lineCounter].itemPic}.png`;
             $('#item-pic').css('background-image',url);
             $('#item-pic').show('fast');
+        }
+    },
+    nextAvatarLeft: () => {
+        if(!chapter[lineCounter].avatarLeft){
+            $('#avatar-pic-left').fadeOut('fast');
+        }
+        else {
+            if(!chapter[lineCounter].emotion){chapter[lineCounter].emotion = '01'}
+            var url = `url(img/avatars/${chapter[lineCounter].avatarLeft}/${chapter[lineCounter].emotion}.png`;
+            $('#avatar-pic-left').css('background-image',url);
+            $('#avatar-pic-left').fadeIn('fast');
         }
     }
 } //=========== game view end =============

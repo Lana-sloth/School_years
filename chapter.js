@@ -4,6 +4,8 @@
 // speaker
 // nameSide
 // text
+// avatarLeft
+// emotion
 
 var chapter = [
     {
@@ -23,19 +25,22 @@ var chapter = [
 
     {
         backPic: "classroom", itemPic: "phone",
-        speaker: "Jack", nameSide: "right",
+        avatarLeft: "sunny", speaker: "Sunny", nameSide: "left",
+        
         text: "Hey!"
     },
 
     {
         backPic: "classroom",
         speaker: "Tim", nameSide: "left",
+        avatarLeft: "sunny",
         text: "(I should text her back...)"
     },
 
     {
         backPic: "classroom",
-        speaker: "Jack", nameSide: "right",
+        avatarLeft: "sunny",
+        speaker: "Sunny", nameSide: "left",
         text: "HEY!"
     },
 
