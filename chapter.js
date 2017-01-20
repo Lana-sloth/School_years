@@ -19,7 +19,6 @@ var chapter = [
 
     {
         backPic: "classroom", itemPic: "phone",
-        speaker: "phone", nameSide: "left",
         text: "*buzz* *buzz*"
     },
 
@@ -27,25 +26,80 @@ var chapter = [
         backPic: "classroom", itemPic: "phone",
         avatarLeft: "sunny", speaker: "Sunny", nameSide: "left",
         
-        text: "Hey!"
+        text: "Oh? A message?"
+    },
+
+    {
+        itemPic: "phone",
+        avatarLeft: "sunny", speaker: "???", nameSide: "right",
+        backSpeed: 1000,
+        text: "What's in there? More insults?"
     },
 
     {
         backPic: "classroom",
-        speaker: "Tim", nameSide: "left",
+        speaker: "Sunny", nameSide: "left",
         avatarLeft: "sunny",
-        text: "(I should text her back...)"
+        text: "*click*"
     },
-
+    
     {
         backPic: "classroom",
         avatarLeft: "sunny",
         speaker: "Sunny", nameSide: "left",
-        text: "HEY!"
+        text: "Huh. Okay."
+    },
+
+    {   
+        speaker: "???", nameSide: "right",
+        text: "Oooooh! Death threats!"
+    },
+
+
+    {   
+        speaker: "???", nameSide: "right",
+        text: "How nice!"
     },
 
     {  
-        speaker: "Tim", nameSide: "left",
-        text: "Huh?"
-    }
+        backPic: "classroom",
+        speaker: "Jenny", nameSide: "right",
+        text: "Hey, what's up?"
+    },
+
+    {
+        backPic: "classroom",
+        avatarRight: "jenny",
+        speaker: "Jenny", nameSide: "right",
+        text: "Sunny?"
+    },
+
+    {
+        backPic: "classroom",
+        avatarLeft: "sunny", avatarRight: "jenny",
+        speaker: "Sunny", nameSide: "left",
+        text: "Oh, hey!"
+    },
+
+    {
+        backPic: "classroom",
+        avatarLeft: "sunny", avatarRight: "jenny",
+        speaker: "Jenny", nameSide: "right",
+        text: "Voices again?"
+    },
+
+    {
+        backPic: "classroom", itemPic: "phone",
+        avatarLeft: "sunny", avatarRight: "jenny",
+        speaker: "Sunny", nameSide: "left",
+        
+        text: "More like texts."
+    },
+
+    {
+        backPic: "classroom", itemPic: "phone",
+        avatarLeft: "sunny", avatarRight: "jenny",
+        speaker: "Jenny", nameSide: "right",
+        text: "Jee... Don't listen to them."
+    },
 ]

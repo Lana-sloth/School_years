@@ -55,7 +55,7 @@ body {
     border: 1px solid #ffffff;
     display: none;
     background-size: cover;
-    bottom: 165px;
+    bottom: 175px;
     right: 208px;
 }
 
@@ -88,14 +88,13 @@ p {
 }
 
 #avatar-pic-right {
-    background-color: black;
     width: 150px;
     height: 150px;
     position: absolute;
     border: 1px solid #ffffff;
     border-radius: 3px;
     right: 15px;
-    bottom: 140px;
+    bottom: 150px;
     background-size: cover;
     display: none;
 }
@@ -107,7 +106,7 @@ p {
     border: 1px solid #ffffff;
     border-radius: 3px;
     left: 15px;
-    bottom: 140px;
+    bottom: 150px;
     background-size: cover;
     display: none;
 }

@@ -10,7 +10,8 @@ $(document).ready(() => {
             gv.nextName();
             gv.nextBg();
             gv.nextItem();
-            gv.nextAvatarLeft();
+            gv.checkAvatar('left');
+            gv.checkAvatar('right');
             lineCounter++;
         }
     });
@@ -62,17 +63,23 @@ var gv = {
             $('#item-pic').show('fast');
         }
     },
-    nextAvatarLeft: () => {
-        if(!chapter[lineCounter].avatarLeft){
-            $('#avatar-pic-left').fadeOut('fast');
+
+
+    checkAvatar: (side) => {
+        var avatarSide;
+        if(side == 'left'){avatarSide = chapter[lineCounter].avatarLeft;}
+        if(side == 'right'){avatarSide = chapter[lineCounter].avatarRight;}
+        if(!avatarSide){
+            $(`#avatar-pic-${side}`).fadeOut('fast');
         }
         else {
             if(!chapter[lineCounter].emotion){chapter[lineCounter].emotion = '01'}
-            var url = `url(img/avatars/${chapter[lineCounter].avatarLeft}/${chapter[lineCounter].emotion}.png`;
-            $('#avatar-pic-left').css('background-image',url);
-            $('#avatar-pic-left').fadeIn('fast');
+            var url = `url(img/avatars/${avatarSide}/${chapter[lineCounter].emotion}.png`;
+            $(`#avatar-pic-${side}`).css('background-image',url);
+            $(`#avatar-pic-${side}`).fadeIn('fast');
         }
-    }
+    },
+
 } //=========== game view end =============
 
 // var timerList = [];
