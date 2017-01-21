@@ -42,7 +42,6 @@ var chapter = [
         backPic: "classroom",
         speaker: "Sunny", nameSide: "left",
         avatarLeft: "sunny",
-        crazyMode: 'true',
         text: "*click*",
     },
     
@@ -50,7 +49,6 @@ var chapter = [
         backPic: "classroom",
         avatarLeft: "sunny",
         speaker: "Sunny", nameSide: "left",
-        crazyMode: 'true',
         text: "Huh. Okay."
     },
 

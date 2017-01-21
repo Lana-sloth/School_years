@@ -1,6 +1,7 @@
 //var lineCounter = 0;
 
 $(document).ready(() => {
+    gv.jumpingSymbol();
     gv.nextLine();
     gm.lineCounter++;
     // clicking on text wrapper
@@ -20,6 +21,16 @@ $(document).ready(() => {
 
 //=========== GAME VIEW =============
 var gv = {
+    jumpingSymbol: () => {
+        setInterval(() => {
+            if($('#jumping-symbol').css('margin-top') == '64px'){
+                $('#jumping-symbol').animate({'margin-top': '67px'}, 150);
+            }
+            else if($('#jumping-symbol').css('margin-top') == '67px'){
+                $('#jumping-symbol').animate({'margin-top': '64px'}, 150);
+            }
+        }, 300);
+    },
     // shows next line
     nextLine: () => { 
         $('#text-display').html(chapter[gm.lineCounter].text);
@@ -91,13 +102,14 @@ var gv = {
     crazyIdList: [],
 
     crazyMode: () => {
-        if(!chapter[gm.lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
+        if(!chapter[gm.lineCounter].crazyMode) {
+            gv.crazyIdList.forEach((i) => clearTimeout(i));
+        }
         if(chapter[gm.lineCounter].crazyMode) {
             gv.crazyIdList.forEach((i) => clearTimeout(i));
             var crazyId = setInterval(() => {
                 $('.js-shake').animate({left: "+=5"}, 45);
                 $('.js-shake').animate({left: "-=5"}, 45);
-                console.log('!');
             }, 100);
         }
         gv.crazyIdList.push(crazyId);

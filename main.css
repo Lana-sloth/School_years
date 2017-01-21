@@ -24,6 +24,17 @@ body {
     background-size: cover;
 }
 
+#jumping-symbol {
+    color: #ffffff;
+    display: inline-block;
+    height: 20px;
+    margin-top: 64px;
+}
+
+#text-display {
+    flex: 1;
+}
+
 #text-wrapper {
     width: auto;
     height: 100px;
@@ -36,6 +47,7 @@ body {
     padding: 0px 20px;
     background-color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
+    display: flex;
 }
 
 #name-container {
