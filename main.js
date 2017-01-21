@@ -40,6 +40,7 @@ var gv = {
                 $('#name-container').addClass('name-left');
             }
         }
+        gv.darkenAvatar(chapter[lineCounter].nameSide);
     }, // next name end
     nextBg: () => {
         if(!chapter[lineCounter].backSpeed) {chapter[lineCounter].backSpeed = 10}
@@ -64,7 +65,6 @@ var gv = {
         }
     },
 
-
     checkAvatar: (side) => {
         var avatarSide;
         if(side == 'left'){avatarSide = chapter[lineCounter].avatarLeft;}
@@ -79,6 +79,13 @@ var gv = {
             $(`#avatar-pic-${side}`).fadeIn('fast');
         }
     },
+
+    darkenAvatar: (activeSide) => {
+        (activeSide == 'right') ?
+            ($('#darken-left').fadeIn('fast'), $('#darken-right').fadeOut('fast'))
+            :
+            ($('#darken-right').fadeIn('fast'), $('#darken-left').fadeOut('fast'));
+    }
 
 } //=========== game view end =============
 
