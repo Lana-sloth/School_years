@@ -1,16 +1,11 @@
-var lineCounter = 0;
+//var lineCounter = 0;
 
 $(document).ready(() => {
     gv.nextLine();
-    lineCounter++;
+    gm.lineCounter++;
     // clicking on text wrapper
     $('#text-wrapper').click(()=> {
-        if(lineCounter < chapter.length) {
-            // if(!chapter[lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
-            // if(chapter[lineCounter].crazyMode) {
-            //     var crazyId = setInterval(() => {console.log('!');}, 30);
-            // }
-            // gv.crazyIdList.push(crazyId);
+        if(gm.lineCounter < chapter.length) {
             gv.nextLine();
             gv.nextName();
             gv.nextBg();
@@ -18,26 +13,26 @@ $(document).ready(() => {
             gv.checkAvatar('left');
             gv.checkAvatar('right');
             gv.crazyMode();
-            lineCounter++;
+            gm.lineCounter++;
         }
     });
 }); // end of ready function
 
-//=========== game view =============
+//=========== GAME VIEW =============
 var gv = {
     // shows next line
     nextLine: () => { 
-        $('#text-display').html(chapter[lineCounter].text);
+        $('#text-display').html(chapter[gm.lineCounter].text);
     },
     // if there's a character's name, it chooses a side and shows it
     nextName: () => {
-        if(!chapter[lineCounter].nameSide){
+        if(!chapter[gm.lineCounter].nameSide){
             $('#name-container').removeClass();
             $('#name-container').html('');
         }
         else {
-            $('#name-container').html(chapter[lineCounter].speaker);
-            if(chapter[lineCounter].nameSide === 'right'){
+            $('#name-container').html(chapter[gm.lineCounter].speaker);
+            if(chapter[gm.lineCounter].nameSide === 'right'){
                 $('#name-container').removeClass();
                 $('#name-container').addClass('name-right');
             }
@@ -46,26 +41,26 @@ var gv = {
                 $('#name-container').addClass('name-left');
             }
         }
-        gv.darkenAvatar(chapter[lineCounter].nameSide);
+        gv.darkenAvatar(chapter[gm.lineCounter].nameSide);
     }, // next name end
     nextBg: () => {
-        if(!chapter[lineCounter].backSpeed) {chapter[lineCounter].backSpeed = 10}
-        if(!chapter[lineCounter].backPic){
-            $('#background').fadeOut(chapter[lineCounter].backSpeed);
+        if(!chapter[gm.lineCounter].backSpeed) {chapter[gm.lineCounter].backSpeed = 10}
+        if(!chapter[gm.lineCounter].backPic){
+            $('#background').fadeOut(chapter[gm.lineCounter].backSpeed);
         }
         else{
-            var url = `url(img/backgrounds/${chapter[lineCounter].backPic}.jpg`;
+            var url = `url(img/backgrounds/${chapter[gm.lineCounter].backPic}.jpg`;
             $('#background').css('background-image', url);
-            $('#background').fadeIn(chapter[lineCounter].backSpeed);
+            $('#background').fadeIn(chapter[gm.lineCounter].backSpeed);
 
         }
     },
     nextItem: () => {
-        if(!chapter[lineCounter].itemPic){
+        if(!chapter[gm.lineCounter].itemPic){
             $('#item-pic').hide('fast');
         }
         else {
-            var url = `url(img/items/${chapter[lineCounter].itemPic}.png`;
+            var url = `url(img/items/${chapter[gm.lineCounter].itemPic}.png`;
             $('#item-pic').css('background-image',url);
             $('#item-pic').show('fast');
         }
@@ -73,14 +68,14 @@ var gv = {
 
     checkAvatar: (side) => {
         var avatarSide;
-        if(side == 'left'){avatarSide = chapter[lineCounter].avatarLeft;}
-        if(side == 'right'){avatarSide = chapter[lineCounter].avatarRight;}
+        if(side == 'left'){avatarSide = chapter[gm.lineCounter].avatarLeft;}
+        if(side == 'right'){avatarSide = chapter[gm.lineCounter].avatarRight;}
         if(!avatarSide){
             $(`#avatar-pic-${side}`).fadeOut('fast');
         }
         else {
-            if(!chapter[lineCounter].emotion){chapter[lineCounter].emotion = '01'}
-            var url = `url(img/avatars/${avatarSide}/${chapter[lineCounter].emotion}.png`;
+            if(!chapter[gm.lineCounter].emotion){chapter[gm.lineCounter].emotion = '01'}
+            var url = `url(img/avatars/${avatarSide}/${chapter[gm.lineCounter].emotion}.png`;
             $(`#avatar-pic-${side}`).css('background-image',url);
             $(`#avatar-pic-${side}`).fadeIn('fast');
         }
@@ -96,8 +91,8 @@ var gv = {
     crazyIdList: [],
 
     crazyMode: () => {
-        if(!chapter[lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
-        if(chapter[lineCounter].crazyMode) {
+        if(!chapter[gm.lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
+        if(chapter[gm.lineCounter].crazyMode) {
             var crazyId = setInterval(() => {
                 $('.js-shake').animate({left: "+=5"}, 5);
                 $('.js-shake').animate({left: "-=5"}, 5);
@@ -106,8 +101,12 @@ var gv = {
         }
         gv.crazyIdList.push(crazyId);
     }
-
 } //=========== game view end =============
+
+//============= GAME MANAGER ==============
+var gm = {
+    lineCounter: 0
+} //============ game manager end ==========
 
 // var timerList = [];
 // window.onload = init;
