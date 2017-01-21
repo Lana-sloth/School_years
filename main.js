@@ -93,20 +93,21 @@ var gv = {
     crazyMode: () => {
         if(!chapter[gm.lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
         if(chapter[gm.lineCounter].crazyMode) {
+            gv.crazyIdList.forEach((i) => clearTimeout(i));
             var crazyId = setInterval(() => {
-                $('.js-shake').animate({left: "+=5"}, 5);
-                $('.js-shake').animate({left: "-=5"}, 5);
+                $('.js-shake').animate({left: "+=5"}, 45);
+                $('.js-shake').animate({left: "-=5"}, 45);
                 console.log('!');
             }, 100);
         }
         gv.crazyIdList.push(crazyId);
     }
-} //=========== game view end =============
+} // game view obj end
 
 //============= GAME MANAGER ==============
 var gm = {
     lineCounter: 0
-} //============ game manager end ==========
+} //game manager obj end
 
 // var timerList = [];
 // window.onload = init;
