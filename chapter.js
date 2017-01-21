@@ -6,6 +6,7 @@
 // text
 // avatarLeft
 // emotion
+// crazyMode
 
 var chapter = [
     {
@@ -33,6 +34,7 @@ var chapter = [
         itemPic: "phone",
         avatarLeft: "sunny", speaker: "???", nameSide: "right",
         backSpeed: 1000,
+        crazyMode: 'true',
         text: "What's in there? More insults?"
     },
 
@@ -40,13 +42,15 @@ var chapter = [
         backPic: "classroom",
         speaker: "Sunny", nameSide: "left",
         avatarLeft: "sunny",
-        text: "*click*"
+        crazyMode: 'true',
+        text: "*click*",
     },
     
     {
         backPic: "classroom",
         avatarLeft: "sunny",
         speaker: "Sunny", nameSide: "left",
+        crazyMode: 'true',
         text: "Huh. Okay."
     },
 

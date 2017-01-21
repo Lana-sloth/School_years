@@ -6,12 +6,18 @@ $(document).ready(() => {
     // clicking on text wrapper
     $('#text-wrapper').click(()=> {
         if(lineCounter < chapter.length) {
+            // if(!chapter[lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
+            // if(chapter[lineCounter].crazyMode) {
+            //     var crazyId = setInterval(() => {console.log('!');}, 30);
+            // }
+            // gv.crazyIdList.push(crazyId);
             gv.nextLine();
             gv.nextName();
             gv.nextBg();
             gv.nextItem();
             gv.checkAvatar('left');
             gv.checkAvatar('right');
+            gv.crazyMode();
             lineCounter++;
         }
     });
@@ -85,6 +91,20 @@ var gv = {
             ($('#darken-left').fadeIn('fast'), $('#darken-right').fadeOut('fast'))
             :
             ($('#darken-right').fadeIn('fast'), $('#darken-left').fadeOut('fast'));
+    },
+
+    crazyIdList: [],
+
+    crazyMode: () => {
+        if(!chapter[lineCounter].crazyMode) {gv.crazyIdList.forEach((i) => clearTimeout(i));}
+        if(chapter[lineCounter].crazyMode) {
+            var crazyId = setInterval(() => {
+                $('.js-shake').animate({left: "+=5"}, 5);
+                $('.js-shake').animate({left: "-=5"}, 5);
+                console.log('!');
+            }, 100);
+        }
+        gv.crazyIdList.push(crazyId);
     }
 
 } //=========== game view end =============
