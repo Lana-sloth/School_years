@@ -109,6 +109,7 @@ p {
     bottom: 150px;
     background-size: cover;
     display: none;
+    background-color: transparent;
 }
 
 #avatar-pic-left {
@@ -121,6 +122,7 @@ p {
     bottom: 150px;
     background-size: cover;
     display: none;
+    background-color: transparent;
 }
 
 .darken {

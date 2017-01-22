@@ -32,9 +32,9 @@ var chapter = [
 
     {
         itemPic: "phone",
-        avatarLeft: "sunny", speaker: "???", nameSide: "right",
+        avatarLeft: "sunny", emotion: 'crazy', speaker: "???", nameSide: "right",
         backSpeed: 1000,
-        crazyMode: 'true',
+        crazyMode: 'left',
         text: "What's in there? More insults?"
     },
 
@@ -54,13 +54,15 @@ var chapter = [
 
     {   
         speaker: "???", nameSide: "right",
+        crazyMode: 'left',
         text: "Oooooh! Death threats!"
     },
 
 
     {   
         speaker: "???", nameSide: "right",
-        text: "How nice!"
+        crazyMode: 'left',
+        text: "ThEY HatE yoU"
     },
 
     {  

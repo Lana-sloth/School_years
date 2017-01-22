@@ -32,8 +32,14 @@ var gv = {
         }, 300);
     },
     // shows next line
-    nextLine: () => { 
-        $('#text-display').html(chapter[gm.lineCounter].text);
+    nextLine: () => {
+        if(!chapter[gm.lineCounter].crazyMode) {
+            $('#text-display').html(chapter[gm.lineCounter].text);
+        }
+        else if (chapter[gm.lineCounter].crazyMode) {
+            var crazyText = zalgo_textarea(chapter[gm.lineCounter].text);
+            $('#text-display').html(crazyText);
+        }
     },
     // if there's a character's name, it chooses a side and shows it
     nextName: () => {
@@ -106,10 +112,11 @@ var gv = {
             gv.crazyIdList.forEach((i) => clearTimeout(i));
         }
         if(chapter[gm.lineCounter].crazyMode) {
+            var side = (chapter[gm.lineCounter].crazyMode == 'left') ? ($('#avatar-pic-left')) : ($('#avatar-pic-right'));
             gv.crazyIdList.forEach((i) => clearTimeout(i));
             var crazyId = setInterval(() => {
-                $('.js-shake').animate({left: "+=5"}, 45);
-                $('.js-shake').animate({left: "-=5"}, 45);
+                side.animate({left: "+=5"}, 45);
+                side.animate({left: "-=5"}, 45);
             }, 100);
         }
         gv.crazyIdList.push(crazyId);
