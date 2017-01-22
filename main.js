@@ -48,7 +48,14 @@ var gv = {
             $('#name-container').html('');
         }
         else {
-            $('#name-container').html(chapter[gm.lineCounter].speaker);
+            if(!chapter[gm.lineCounter].crazyMode) {
+                $('#name-container').html(chapter[gm.lineCounter].speaker);
+            }
+            else if (chapter[gm.lineCounter].crazyMode) {
+                var crazyText = zalgo_textarea(chapter[gm.lineCounter].speaker);
+                $('#name-container').html(crazyText);
+            }
+            
             if(chapter[gm.lineCounter].nameSide === 'right'){
                 $('#name-container').removeClass();
                 $('#name-container').addClass('name-right');
