@@ -55,7 +55,7 @@ var gv = {
                 var crazyText = zalgo_textarea(chapter[gm.lineCounter].speaker);
                 $('#name-container').html(crazyText);
             }
-            
+
             if(chapter[gm.lineCounter].nameSide === 'right'){
                 $('#name-container').removeClass();
                 $('#name-container').addClass('name-right');
@@ -117,13 +117,23 @@ var gv = {
     crazyMode: () => {
         if(!chapter[gm.lineCounter].crazyMode) {
             gv.crazyIdList.forEach((i) => clearTimeout(i));
+            $('#avatar-pic-left').animate({'left': '20px'}, 45);
         }
         if(chapter[gm.lineCounter].crazyMode) {
-            var side = (chapter[gm.lineCounter].crazyMode == 'left') ? ($('#avatar-pic-left')) : ($('#avatar-pic-right'));
-            gv.crazyIdList.forEach((i) => clearTimeout(i));
+            // var side = (chapter[gm.lineCounter].crazyMode == 'left') ? ($('#avatar-pic-left')) : ($('#avatar-pic-right'));
+            // gv.crazyIdList.forEach((i) => clearTimeout(i));
+            // var crazyId = setInterval(() => {
+            //     side.animate({left: "+=5"}, 45);
+            //     side.animate({left: "-=5"}, 45);
+            // }, 100);
+
             var crazyId = setInterval(() => {
-                side.animate({left: "+=5"}, 45);
-                side.animate({left: "-=5"}, 45);
+                if ($('#avatar-pic-left').css('left') == '15px'){
+                    $('#avatar-pic-left').animate({'left': '20px'}, 45);
+                }
+                else if($('#avatar-pic-left').css('left') == '20px'){
+                    $('#avatar-pic-left').animate({'left': '15px'}, 45);
+                }
             }, 100);
         }
         gv.crazyIdList.push(crazyId);

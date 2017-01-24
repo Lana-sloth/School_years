@@ -62,7 +62,13 @@ var chapter = [
     {   
         speaker: "???", nameSide: "right",
         crazyMode: 'left',
-        text: "ThEY HatE yoU"
+        text: "What a surprise!"
+    },
+
+    {   
+        speaker: "???", nameSide: "right",
+        crazyMode: 'left',
+        text: "They all hate you!"
     },
 
     {  
