@@ -8,7 +8,7 @@
 // emotion
 // crazyMode
 
-var chapter = [
+var first = [
     {
         text: "..."
     },
@@ -113,3 +113,4 @@ var chapter = [
         text: "Jee... Don't listen to them."
     },
 ]
+

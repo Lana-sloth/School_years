@@ -1,4 +1,5 @@
 //var lineCounter = 0;
+var chapter = first;
 
 $(document).ready(() => {
     gv.jumpingSymbol();
@@ -21,39 +22,43 @@ $(document).ready(() => {
 
 //=========== GAME VIEW =============
 var gv = {
+    //line: chapter[gm.lineCounter],
     jumpingSymbol: () => {
+        var arrow = $('#jumping-symbol');
         setInterval(() => {
-            if($('#jumping-symbol').css('margin-top') == '64px'){
-                $('#jumping-symbol').animate({'margin-top': '67px'}, 150);
+            if(arrow.css('margin-top') == '64px'){
+                arrow.animate({'margin-top': '67px'}, 150);
             }
-            else if($('#jumping-symbol').css('margin-top') == '67px'){
-                $('#jumping-symbol').animate({'margin-top': '64px'}, 150);
+            else if(arrow.css('margin-top') == '67px'){
+                arrow.animate({'margin-top': '64px'}, 150);
             }
         }, 300);
     },
     // shows next line
     nextLine: () => {
+        var textDisplay = $('#text-display');
         if(!chapter[gm.lineCounter].crazyMode) {
-            $('#text-display').html(chapter[gm.lineCounter].text);
+            textDisplay.html(chapter[gm.lineCounter].text);
         }
         else if (chapter[gm.lineCounter].crazyMode) {
             var crazyText = zalgo_textarea(chapter[gm.lineCounter].text);
-            $('#text-display').html(crazyText);
+            textDisplay.html(crazyText);
         }
     },
     // if there's a character's name, it chooses a side and shows it
     nextName: () => {
         if(!chapter[gm.lineCounter].nameSide){
-            $('#name-container').removeClass();
-            $('#name-container').html('');
+            $('#name-container').remove();
         }
         else {
             if(!chapter[gm.lineCounter].crazyMode) {
-                $('#name-container').html(chapter[gm.lineCounter].speaker);
+                $('#name-container').remove();
+                $('#text-wrapper').prepend('<div id="name-container">' + chapter[gm.lineCounter].speaker + '</div>');
             }
             else if (chapter[gm.lineCounter].crazyMode) {
                 var crazyText = zalgo_textarea(chapter[gm.lineCounter].speaker);
-                $('#name-container').html(crazyText);
+                $('#name-container').remove();
+                $('#text-wrapper').prepend('<div id="name-container">' + crazyText + '</div>');
             }
 
             if(chapter[gm.lineCounter].nameSide === 'right'){
